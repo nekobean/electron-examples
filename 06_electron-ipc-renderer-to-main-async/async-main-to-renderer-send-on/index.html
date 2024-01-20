@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <p id="recieve"></p>
+  </body>
+</html>
+<script>
+  Electron.recieved((...args) => {
+    console.log(`[Renderer] ${args} received.`);
+    document.getElementById("recieve").textContent = JSON.stringify(args);
+
+    // Renderer -> Main
+    Electron.send("pong");
+  });
+</script>

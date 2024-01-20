@@ -1,0 +1,14 @@
+{
+  "name": "electron-example",
+  "version": "1.0.0",
+  "description": "Electron example",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "papillon",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.1.3"
+  }
+}

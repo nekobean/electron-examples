@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <button onclick="clicked()">Send To Main</button>
+    <p id="recieve"></p>
+  </body>
+</html>
+<script>
+  function clicked() {
+    Electron.send().then((...args) => {
+      console.log(`[Renderer] ${args} received.`);
+
+      document.getElementById("recieve").textContent = JSON.stringify(args);
+    });
+  }
+  // async/await で書く場合
+  //   async function clicked() {
+  //     const args = await Electron.send();
+  //     document.getElementById("recieve").textContent = JSON.stringify(args);
+  //     console.log(`[Renderer] ${args} received.`);
+  //   }
+  //
+</script>
